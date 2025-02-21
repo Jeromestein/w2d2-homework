@@ -351,96 +351,148 @@ section {
 }
 
 /* Contact Form Styles */
-#contact main {
+.contact-main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 2rem;
 }
 
-#contact fieldset {
-    border: 1px solid #9ed034;
-    padding: 20px;
-    margin: 0;
-    background-color: white;
+.contact-form-wrapper {
+    background-color: #f8f9fa;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* Contact info styles */
-#contact .contactinfo {
-    margin-bottom: 20px;
+/* Contact info section */
+.contactinfo {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-#contact .contactinfo .phone,
-#contact .contactinfo .email {
-    margin: 10px 0;
+.contactinfo .phone,
+.contactinfo .email {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
 }
 
-/* Form elements styles */
-#contact .textbox label {
-    display: block;
-    margin-bottom: 5px;
+.contactinfo .phone:hover,
+.contactinfo .email:hover {
+    background-color: #f8f9fa;
 }
 
-#contact .textbox input {
-    width: 100%;
-    margin-bottom: 15px;
+/* Form elements */
+.form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #444;
 }
 
-#contact .radios,
-#contact .selectmenu {
-    display: flex;
-    align-items: center;
-    margin: 15px 0;
-}
-
-#contact .radios label,
-#contact .selectmenu label {
-    min-width: 200px;
-    margin-right: 15px;
-}
-
-#contact .commentbox {
-    margin: 15px 0;
-}
-
-#contact .commentbox textarea {
-    width: 100%;
-    height: 100px;
-}
-
-#contact .button {
-    text-align: right;
-    margin-top: 15px;
-    padding-right: 20px;
-}
-
-#contact input[type="submit"] {
-    background-color: rgba(73, 119, 209, 1);
-    color: rgba(255, 255, 255, 1);
-    border: none;
-    padding: 10px 30px;
-    cursor: pointer;
-    font-size: 16px;
+.form-control,
+.form-select {
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 0.75rem;
     transition: all 0.3s ease;
 }
 
-#contact input[type="submit"]:disabled {
-    background-color: rgba(73, 119, 209, 0.3);
-    color: rgba(255, 255, 255, 0.5);
-    cursor: not-allowed;
+.form-control:focus,
+.form-select:focus {
+    border-color: #9ed034;
+    box-shadow: 0 0 0 0.2rem rgba(158, 208, 52, 0.25);
 }
 
-#contact legend {
-    color: #4977D1;
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
 }
 
-#contact .contact-form-wrapper {
-    width: 50%;
-    padding-right: 40px;
+/* Remove old randomcode styles */
+.randomcode {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    margin-top: 0;
+    display: block;
+    justify-content: flex-start;
 }
 
-/* Remove any floats from submit button */
-#contact input[type="submit"] {
-    float: none;
+.code-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+}
+
+#codes {
+    background: #4288c3;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-family: monospace;
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+/* Remove duplicate styles */
+.textbox {
+    margin: 0;
+}
+
+#emailField, #phoneField {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+#emailField.hidden, #phoneField.hidden {
+    opacity: 0;
+}
+
+/* Update responsive styles */
+@media (max-width: 768px) {
+    .contact-main {
+        padding: 1rem;
+    }
+    
+    .contact-form-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .contactinfo {
+        padding: 1rem;
+    }
+    
+    .btn-primary {
+        width: 100%;
+        padding: 0.75rem;
+    }
+
+    .randomcode {
+        padding: 1rem;
+    }
+}
+
+/* Form validation styles */
+.form-control.is-invalid {
+    border-color: #dc3545;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.invalid-feedback {
+    display: none;
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
 }
 
 /* Cliffs Gallery styles */
