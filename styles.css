@@ -2,7 +2,7 @@
 header {
     width: 100%;
     min-height: 400px;
-    padding-top: 3em;
+    padding-top: 100px;
 }
 #home header {
     background:  no-repeat lightgrey url(images/cliff_ocean.jpg);
@@ -25,13 +25,16 @@ header {
     background-color: rgb(255, 255, 255, 0.8);
     width: 100%;
     max-width: 700px;
-    margin: 2em auto 0 auto;
+    margin: 0 auto;
     min-height: 100px;
     height: 100px;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000;
     padding: 0 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 .main-header .logo img {
     width: 100px;
@@ -861,4 +864,9 @@ table td.tdhighlight {
 
 .cliff img {
     cursor: pointer;
+}
+
+/* Remove body padding */
+body {
+    padding-top: 0;
 }
