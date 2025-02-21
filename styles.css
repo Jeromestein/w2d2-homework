@@ -9,11 +9,14 @@ header {
     background-size: cover;
 }
 .main-header {
-    background-color:rgb(255, 255, 255, 0.8) ;
-    width: 700px;
+    background-color: rgb(255, 255, 255, 0.8);
+    width: 100%;
+    max-width: 700px;
     margin: 2em auto 0 auto;
     min-height: 100px;
     height: 100px;
+    position: relative;
+    padding: 0 15px;
 }
 .main-header .logo img {
     width: 100px;
@@ -24,27 +27,47 @@ header {
 
 /* Navigation */
 .main-menu {
-    margin-left: 227px;
-    font-weight: 400;
+    margin-left: 0;
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.main-menu.show {
+    display: block;
+}
+
+.main-menu ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 /* Add new navbar-toggle styles */
 .navbar-toggle {
-    display: none;
+    display: block;
     position: absolute;
     right: 15px;
-    top: 35px;
+    top: 50%;
+    transform: translateY(-50%);
     border: none;
     background: transparent;
     cursor: pointer;
+    z-index: 100;
+    padding: 10px;
 }
 
 .navbar-toggle .icon-bar {
     display: block;
-    width: 22px;
-    height: 2px;
+    width: 25px;
+    height: 3px;
     background-color: #888;
-    margin: 4px 0;
+    margin: 5px 0;
+    transition: all 0.3s ease;
 }
 
 .main-menu ul li {
@@ -379,5 +402,20 @@ footer #nondisclaimer .social .fa-instagram {
     .content-block {
         width: 50%;
         flex: 0 0 auto;
+    }
+}
+
+/* Media query updates */
+@media (min-width: 993px) {
+    .navbar-toggle {
+        display: none;
+    }
+    
+    .main-menu {
+        display: block;
+        position: static;
+        margin-left: 227px;
+        width: auto;
+        box-shadow: none;
     }
 }
