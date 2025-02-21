@@ -89,17 +89,10 @@
                 </table>
             </div>
 
-            <div id="displaySelected">
-                <div id="result">
-                    <h4>My selected activities to enquire:</h4>
-                </div>
-                <div id="sendinfo">
-                    <input type="email" placeholder="johndoe@gmail.com">
-                    <button data-toggle="modal" data-target="#infoModal">Get Info</button>
-                </div>
+            <div id="selectButtonContainer" style="margin-top: 20px;">
+                <button id="selectButton" class="btn btn-primary">Select</button>
             </div>
 
-            <!-- Bootstrap 模态框 -->
             <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -144,7 +137,6 @@
           </section>
 
         <footer>
-        <!-- Nondisclaimer -->
         <div id="nondisclaimer">
             <div class="copy">&copy; Copyright 2021 :: GreatCliffs.com</div>
             <div class="social">
@@ -153,9 +145,7 @@
             <a href="#" class="fa fa-twitter"></a>
             </div>
         </div>
-        <!-- End Nondisclaimer -->
     
-        <!-- Disclaimer -->
         <div id="disclaimer">
             <p>
             This website is designed and created solely for educational purposes
@@ -163,10 +153,8 @@
             commercial gain or use.
             </p>
         </div>
-        <!-- End Disclaimer -->
         </footer>
     </div>
-    <!-- JavaScript Codes -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="js/activity.js"></script>

@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    let selectedActivities = [];
+
     $('table td').not(':contains("Not Available")').not(':first-child').css('cursor', 'pointer');
     
     $("td").click(function () {
@@ -22,6 +24,33 @@ $(document).ready(function() {
                     $('#displaySelected').css("margin-top","0");
                 }
             }
+        }
+    });
+
+    $('table tbody td').click(function() {
+        const activity = $(this).text();
+
+        if (activity === "Not Available") {
+            return;
+        }
+
+        const index = selectedActivities.indexOf(activity);
+
+        if (index === -1) {
+            selectedActivities.push(activity);
+            $(this).addClass('tdhighlight'); 
+        } else {
+            selectedActivities.splice(index, 1);
+            $(this).removeClass('tdhighlight'); 
+        }
+    });
+
+    $('#selectButton').click(function() {
+        if (selectedActivities.length > 0) {
+            $('#modalContent').text('My selected activities to enquire: ' + selectedActivities.join(', '));
+            $('#infoModal').modal('show');
+        } else {
+            alert('Please select at least one activity.');
         }
     });
 }); 
