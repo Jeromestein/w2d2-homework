@@ -1,8 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const navbarToggle = document.querySelector('.navbar-toggle');
-    const mainMenu = document.querySelector('.main-menu');
-
-    navbarToggle.addEventListener('click', function() {
-        mainMenu.classList.toggle('show');
+    const navbarToggles = document.querySelectorAll('.navbar-toggle');
+    
+    navbarToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const mainMenu = document.querySelector('.main-menu');
+            if(mainMenu) {
+                mainMenu.classList.toggle('show');
+            }
+        });
     });
 }); 
