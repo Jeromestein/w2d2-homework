@@ -1,0 +1,64 @@
+/* Partners Section */
+#partners {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    padding: 2em 1em;
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.partner {
+    background-color: #fff;
+    /* 使用 aspect-ratio 确保容器为正方形 */
+    aspect-ratio: 1;
+    /* 使用固定的宽高 */
+    width: 120px;
+    height: 120px;
+    /* 圆形边框 */
+    border-radius: 50%;
+    /* 居中内容 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 添加内边距 */
+    padding: 1.3em;
+    /* 确保内容不溢出 */
+    overflow: hidden;
+}
+
+/* 确保图片充满父容器但保持比例 */
+.partner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Small 屏幕：两列 */
+@media (min-width: 576px) {
+    #partners {
+        gap: 1.5em;
+    }
+    .partner {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Medium 屏幕：三列 */
+@media (min-width: 768px) {
+    .partner {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+/* Large 及以上：六列 */
+@media (min-width: 992px) {
+    .partner {
+        width: 120px;
+        height: 120px;
+    }
+}
